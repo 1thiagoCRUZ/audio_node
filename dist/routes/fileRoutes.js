@@ -1,0 +1,1 @@
+const multer=require("multer"),{Router:Router}=require("express"),{uploadFile:uploadFile}=require("../controllers/fileController"),storage=multer.memoryStorage(),upload=multer({storage:storage}),router=require("express").Router();router.post("/v1/uploadFile",upload.single("file"),uploadFile),module.exports=router;
